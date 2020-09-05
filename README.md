@@ -1,44 +1,25 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+道路を方角ごとに着色するやつ
+=====
 
-## Available Scripts
+## 概要
 
-In the project directory, you can run:
+道路を方角ごとに着色した地図を表示します．
 
-### `yarn start`
+地図データは OpenStreetMap のベクタタイル情報を Nextzen API 経由で読み込んでいます．
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [OpenStreetMap](https://www.openstreetmap.org/)
+- [Nextzen](https://www.nextzen.org/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 着色の仕様
 
-### `yarn test`
+道路の色は polyline を構成する線分ごとに方位を計算して決定しています．
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+直行する道路は同じ色で塗られます．道路の方向が 90 度変わるごとに色相環を1周するような調子で色を変えています．
 
-### `yarn build`
+## リンク
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [道路を方角ごとに塗り分けると、その街のでき方がわかる :: デイリーポータルZ](https://dailyportalz.jp/kiji/douro-hougaku-machi-no-dekikata)
+  - この記事を見かけて，道路を塗り分けるやつを実際に作ろうと思った．
+- [国土地理院のバイナリベクトルタイルを OpenLayers で表示 \- 水戸地図](https://cieloazul310.github.io/2019/08/openlayers-vt/)
+  - ベクタタイルの簡単な使用方法は，この記事で初めて触れた．
+  - 今回は日本国内に限定したくなかったため，国土地理院のデータではなく OSM のタイルを用いた．

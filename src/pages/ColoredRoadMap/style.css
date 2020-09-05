@@ -1,0 +1,16 @@
+h1 {
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    padding: 5px;
+    margin: 0;
+    white-space: nowrap;
+    background-color: #F7CC05;
+}
+
+.colored-road-map-container {
+    width: 100%;
+    height: calc(100vh - 40px);
+    margin: 0;
+    padding: 0;
+}
